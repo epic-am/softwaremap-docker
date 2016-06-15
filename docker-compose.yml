@@ -1,0 +1,25 @@
+softwaremapfront:
+  name: softwaremapfront
+  image: softwaremap-front
+  ports:
+    - "8080:8080"
+  volumes:
+    - /project/PERSO/softwareMap/GITHUB/:/project/
+
+softwaremapcore:
+  name: softwaremapcore
+  build: softwaremap-core
+  ports:
+    - "4000:4000"
+  volumes:
+    - /project/PERSO/softwareMap/GITHUB/:/project/
+
+# softwaremapcrawlerupstream:
+#   name: softwaremapcrawlerupstream
+#   build: softwaremap-crawler-upstream
+#   ports:
+#     - "5000:5000"
+#   volumes:
+#     - /project/PERSO/softwareMap/GITHUB/:/project/
+#   links:
+#     - softwaremapcore
